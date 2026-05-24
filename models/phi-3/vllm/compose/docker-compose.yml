@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  vllm:
+    image: vllm/vllm-openai:v0.4.0
+    container_name: phi-3-mini-vllm
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./../../../models/phi-3:/models
+    environment:
+      - MODEL=/models/phi-3-mini
+      - TENSOR_PARALLEL_SIZE=1
+      - GPU_MEMORY_UTILIZATION=0.9
+      - MAX_MODEL_LEN=4096
+      - dtype=auto
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
