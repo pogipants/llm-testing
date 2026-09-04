@@ -1,4 +1,4 @@
-# RTX 3060 LLM Optimization Repository
+# CLONED from RTX 3060 LLM Optimization Repository (https://github.com/yourusername/rtx3060-llm.git)
 
 This repository provides scripts, benchmarks, and guides for optimizing and deploying Large Language Models (LLMs) on NVIDIA RTX 3060 graphics cards (12 GB VRAM). It is inspired by and similar in structure to [club-3090](https://github.com/noonghunna/club-3090/).
 
